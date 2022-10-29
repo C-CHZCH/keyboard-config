@@ -1,0 +1,14 @@
+#create process
+[Unit]
+Description=xkeysnail
+
+[Service]
+Environment=DISPLAY=:0
+# diable log
+ExecStart=/usr/bin/xkeysnail  /home/chzch/.config/xkeysnail/config.py --quiet
+Type=simple
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
